@@ -1,0 +1,173 @@
+@import url('https://fonts.googleapis.com/css2?family=Pattaya&display=swap');
+
+
+html {
+    scroll-behavior: smooth;
+} 
+
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    /* background-color: black; */
+    background-image: url(img/2.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+}
+
+button {
+    margin: 5px;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.1);
+    font-weight: bold;
+    color: white;
+    border-radius: 3px;
+    border: none;
+    width: 100px;
+}
+
+button:active {
+    transform: scale(1.1)
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0, 0, 0, 0.7);
+    z-index: 3;
+    color: white;
+    text-align: center;
+    padding: 25px;
+    overflow: auto;
+    
+}
+
+#closeButton {
+    float: right;
+    margin-right: 75px;
+    font-size: 25px;
+}
+
+.modal h2 {
+    font-weight: bold;
+    font-family: 'Pattaya', sans-serif;
+}
+
+#formContainer {
+    border: solid 1px white;
+    padding: 10px;
+    min-height: 300px;
+    max-width: 400px;
+    margin: 55px auto;
+    text-align: left;
+    line-height: 55px;
+    background-color: rgb(0, 0, 0, 0.9);
+ }
+
+@media (max-width: 768px) {
+    #formContainer {
+        width: 60vw;
+    }
+}
+
+#submitButton {
+   display: block;
+   margin: auto;
+}
+
+form label {
+    margin: 10px;
+} 
+
+
+.main {
+    height: 100%;
+    width: 100%;
+}
+
+nav {
+    height: 70px;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    background-color: rgb(0, 0, 0, 0.9);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#logo {
+    height: 40px;
+    width: 40px;
+    margin-left: 25px;
+}
+
+nav a {
+    text-decoration: none;
+    font-family: 'Pattaya', sans-serif;
+    margin-left: 15px;
+    color: #F2DBAE;
+}
+
+nav button {
+    margin-right: 25px;
+}
+
+#booksContainer {
+    margin-top: 75px;
+    min-height: 300px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 25px;
+    padding: 10px;
+    justify-items: center;
+    align-items: center;
+    /* border: solid 1px black; */
+   
+
+}
+
+
+
+.books {
+    /* border: solid 1px blue; */
+    border-radius: 3px;
+    height: 200px;
+    width: 80%;
+    padding: 10px;
+    line-height: 25px;
+    background-color: rgb(0, 0, 0, 0.9);
+    color: white;
+    /* background-color: #ebecf0; */
+    /* opacity: 0.6; */
+}
+
+.bookTitle {
+    font-weight: bold;
+    text-transform: capitalize;
+}
+
+.delete, .readButton {
+    margin-top: 20px;
+    display: block;
+    float: right;
+}
+
+#closeButton {
+    cursor: pointer;
+}
+
