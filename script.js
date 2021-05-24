@@ -36,7 +36,6 @@ function addToDisplay() {
                         <h3>${book.author}</h3>
                         <h3>${book.numPages} pages</h3>
                         <button class="readButton">${book.readState}</button>
-
                         <button class="delete">Delete</button>`
         div.classList.add("books");
         container.appendChild(div);
@@ -58,11 +57,12 @@ window.addEventListener("click", (e) => {
 })
 
 newBook.addEventListener("click", () => {
-    modal.style.display = "block";
+    modal.classList.add("opened");
 })
 
 closeModal.addEventListener("click", () => {
-    modal.style.display = "none";
+    modal.classList.remove("opened");
+
 })
 
 
@@ -76,7 +76,7 @@ formBook.addEventListener("submit", (e) => {
     document.querySelector("#readState").checked === true ? readState = "Read" : readState = "Not read";
     addBookToLibrary(title, author, numPages, readState);
     addToDisplay();
-    modal.style.display = "none";
+    modal.classList.remove("opened");
     formBook.reset();
 })
 
