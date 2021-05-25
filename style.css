@@ -11,12 +11,12 @@ body {
     margin: 0;
     padding: 0;
     position: relative;
-    /* background-color: black; */
     background-image: url(img/10.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
     background-attachment: fixed;
+
 }
 
 button {
@@ -46,7 +46,6 @@ button:active {
     z-index: -1;
     color: white;
     text-align: center;
-    /* padding: 25px; */
     overflow: auto;
     opacity: 0;
     transition: all 0.7s ease-in-out;
@@ -73,8 +72,7 @@ button:active {
 }
 
 #formContainer {
-    border: solid 2px white;
-    /* border: none; */
+    border: solid 1px white;
     border-radius: 5px;
     padding: 10px;
     min-height: 300px;
@@ -151,13 +149,14 @@ nav button {
 #booksContainer {
     margin-top: 75px;
     min-height: 300px;
+    max-height: 600px;
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
     gap: 25px;
     padding: 10px;
     justify-items: center;
     align-items: center;
-    /* overflow: auto;
+    overflow: auto;
     /* overflow-y: scroll; */
 /* 
     border: solid 1px black; */

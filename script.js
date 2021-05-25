@@ -47,6 +47,51 @@ function addToDisplay() {
     return
 }
 
+window.addEventListener("click", (e) => {
+    if(e.target.classList.value === "readButton") {
+        let arrIndex = Number(e.target.parentNode.dataset.index);
+        e.target.textContent = myLibrary[arrIndex].toggleRead();
+    }
+    
+    else if(e.target.classList.value === "delete") {
+        let arrIndex = Number(e.target.parentNode.dataset.index);
+        requestAnimationFrame( () => {
+            e.target.parentNode.classList.remove("created");       
+        });
+        e.target.parentNode.addEventListener("transitionend", (e) => {
+            if(e.propertyName === "opacity") e.target.remove();
+  
+        })
+        delete myLibrary[arrIndex];
+    }
+})
+
+newBook.addEventListener("click", () => {
+    modal.classList.add("opened");
+})
+
+closeModal.addEventListener("click", () => {
+    modal.classList.remove("opened");
+
+})
+
+formBook.addEventListener("submit", (e) => {
+    e.preventDefault();
+    let title = document.querySelector("#title").value;
+    let author = document.querySelector("#author").value;
+    let numPages = document.querySelector("#numPages").value;
+    let readState
+    document.querySelector("#readState").checked === true ? readState = "Read" : readState = "Not read";
+    addBookToLibrary(title, author, numPages, readState);
+    addToDisplay();
+    modal.classList.remove("opened");
+    formBook.reset();
+})
+
+window.addEventListener("scroll", () => {
+    if(this.scrollY > 1) nav.classList.add("scroll");
+    else nav.classList.remove("scroll");
+})
 
 
 // addBookToLibrary('moi',"foo", 45, 'read')
@@ -84,57 +129,6 @@ function addToDisplay() {
 // addBookToLibrary('moi',"foo", 45, 'read')
 // addBookToLibrary('moi',"foo", 45, 'read')
 // addToDisplay()
-
-
-
-window.addEventListener("click", (e) => {
-    if(e.target.classList.value === "readButton") {
-        let arrIndex = Number(e.target.parentNode.dataset.index);
-        e.target.textContent = myLibrary[arrIndex].toggleRead();
-    }
-    
-    else if(e.target.classList.value === "delete") {
-        let arrIndex = Number(e.target.parentNode.dataset.index);
-        requestAnimationFrame( () => {
-            e.target.parentNode.classList.remove("created");       
-        });
-        e.target.parentNode.addEventListener("transitionend", (e) => {
-            if(e.propertyName === "opacity") e.target.remove();
-  
-        })
-        delete myLibrary[arrIndex];
-    }
-})
-
-newBook.addEventListener("click", () => {
-    modal.classList.add("opened");
-})
-
-closeModal.addEventListener("click", () => {
-    modal.classList.remove("opened");
-
-})
-
-
-
-formBook.addEventListener("submit", (e) => {
-    e.preventDefault();
-    let title = document.querySelector("#title").value;
-    let author = document.querySelector("#author").value;
-    let numPages = document.querySelector("#numPages").value;
-    let readState
-    document.querySelector("#readState").checked === true ? readState = "Read" : readState = "Not read";
-    addBookToLibrary(title, author, numPages, readState);
-    addToDisplay();
-    modal.classList.remove("opened");
-    formBook.reset();
-})
-
-window.addEventListener("scroll", () => {
-    if(this.scrollY > 1) nav.classList.add("scroll");
-    else nav.classList.remove("scroll");
-
-})
 
 
 
