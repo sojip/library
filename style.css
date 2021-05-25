@@ -16,6 +16,7 @@ body {
     background-size: cover;
     background-position: center center;
     background-attachment: fixed;
+    overflow: auto;
 
 }
 
@@ -156,7 +157,7 @@ nav button {
     padding: 10px;
     justify-items: center;
     align-items: center;
-    overflow: auto;
+    /* overflow: auto; */
     /* overflow-y: scroll; */
 /* 
     border: solid 1px black; */
