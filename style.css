@@ -58,9 +58,11 @@ button:active {
 }
 
 #closeButton {
-    float: right;
-    margin-right: 75px;
+    margin-right: 55px;
     font-size: 25px;
+    cursor: pointer;
+    align-self: flex-end;
+    margin-top: 15px;
 }
 
 .modal h2 {
@@ -146,6 +148,8 @@ nav button {
     padding: 10px;
     justify-items: center;
     align-items: center;
+    overflow-x: scroll;
+
     /* border: solid 1px black; */
    
 
@@ -174,8 +178,4 @@ nav button {
     float: right;
 }
 
-#closeButton {
-    cursor: pointer;
-    align-self: flex-end;
-}
 

@@ -43,6 +43,42 @@ function addToDisplay() {
     return
 }
 
+addBookToLibrary('moi',"foo", 45, 'read')
+
+addBookToLibrary('moi',"foo", 45, 'read')
+addBookToLibrary('moi',"foo", 45, 'read')
+addBookToLibrary('moi',"foo", 45, 'read')
+addBookToLibrary('moi',"foo", 45, 'read')
+addBookToLibrary('moi',"foo", 45, 'read')
+addBookToLibrary('moi',"foo", 45, 'read')
+addBookToLibrary('moi',"foo", 45, 'read')
+addBookToLibrary('moi',"foo", 45, 'read')
+addBookToLibrary('moi',"foo", 45, 'read')
+addBookToLibrary('moi',"foo", 45, 'read')
+addBookToLibrary('moi',"foo", 45, 'read')
+addBookToLibrary('moi',"foo", 45, 'read')
+addBookToLibrary('moi',"foo", 45, 'read')
+addBookToLibrary('moi',"foo", 45, 'read')
+addBookToLibrary('moi',"foo", 45, 'read')
+addBookToLibrary('moi',"foo", 45, 'read')
+addBookToLibrary('moi',"foo", 45, 'read')
+addBookToLibrary('moi',"foo", 45, 'read')
+addBookToLibrary('moi',"foo", 45, 'read')
+addBookToLibrary('moi',"foo", 45, 'read')
+addBookToLibrary('moi',"foo", 45, 'read')
+addBookToLibrary('moi',"foo", 45, 'read')
+addBookToLibrary('moi',"foo", 45, 'read')
+addBookToLibrary('moi',"foo", 45, 'read')
+addBookToLibrary('moi',"foo", 45, 'read')
+addBookToLibrary('moi',"foo", 45, 'read')
+addBookToLibrary('moi',"foo", 45, 'read')
+addBookToLibrary('moi',"foo", 45, 'read')
+addBookToLibrary('moi',"foo", 45, 'read')
+addBookToLibrary('moi',"foo", 45, 'read')
+addBookToLibrary('moi',"foo", 45, 'read')
+addBookToLibrary('moi',"foo", 45, 'read')
+addToDisplay()
+
 window.addEventListener("click", (e) => {
     if(e.target.classList.value === "readButton") {
         let arrIndex = Number(e.target.parentNode.dataset.index);
