@@ -3,6 +3,7 @@ let newBook = document.querySelector("#newBook");
 let modal = document.querySelector(".modal");
 let closeModal = document.querySelector("#closeButton");
 let formBook = document.querySelector("#formBook");
+let nav = document.querySelector("nav");
 
 function Book(title, author, numPages, readState) {
     this.title = title;
@@ -34,14 +35,19 @@ function addToDisplay() {
         
         div.innerHTML = `<h2  class="bookTitle">${book.title}</h2>
                         <h3>${book.author}</h3>
-                        <h3>${book.numPages} pages</h3>
-                        <button class="readButton">${book.readState}</button>
-                        <button class="delete">Delete</button>`
+                        <h3>${book.numPages} Pages</h3>
+                        <button class="readButton">${book.readState}</button><br>
+                       <button class="delete">Delete</button>`
         div.classList.add("books");
         container.appendChild(div);
+        requestAnimationFrame(() =>{
+            div.classList.add("created")
+        });
     })
     return
 }
+
+
 
 // addBookToLibrary('moi',"foo", 45, 'read')
 
@@ -79,6 +85,8 @@ function addToDisplay() {
 // addBookToLibrary('moi',"foo", 45, 'read')
 // addToDisplay()
 
+
+
 window.addEventListener("click", (e) => {
     if(e.target.classList.value === "readButton") {
         let arrIndex = Number(e.target.parentNode.dataset.index);
@@ -87,8 +95,14 @@ window.addEventListener("click", (e) => {
     
     else if(e.target.classList.value === "delete") {
         let arrIndex = Number(e.target.parentNode.dataset.index);
+        requestAnimationFrame( () => {
+            e.target.parentNode.classList.remove("created");       
+        });
+        e.target.parentNode.addEventListener("transitionend", (e) => {
+            if(e.propertyName === "opacity") e.target.remove();
+  
+        })
         delete myLibrary[arrIndex];
-        addToDisplay();
     }
 })
 
@@ -116,6 +130,11 @@ formBook.addEventListener("submit", (e) => {
     formBook.reset();
 })
 
+window.addEventListener("scroll", () => {
+    if(this.scrollY > 1) nav.classList.add("scroll");
+    else nav.classList.remove("scroll");
+
+})
 
 
 
