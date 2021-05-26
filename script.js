@@ -59,10 +59,11 @@ window.addEventListener("click", (e) => {
             e.target.parentNode.classList.remove("created");       
         });
         e.target.parentNode.addEventListener("transitionend", (e) => {
-            if(e.propertyName === "opacity") e.target.remove();
-  
+            if(e.propertyName === "opacity") {
+                delete myLibrary[arrIndex];  
+                addToDisplay()
+            }    
         })
-        delete myLibrary[arrIndex];
     }
 })
 
@@ -95,47 +96,46 @@ window.addEventListener("scroll", () => {
 
 
 window.addEventListener('wheel', function(e) {
-
-  if (e.deltaY > 0) booksContainer.scrollLeft += 50;
-  else booksContainer.scrollLeft -= 50;
+  if (e.deltaY > 0) booksContainer.scrollLeft += 150;
+  else booksContainer.scrollLeft -= 150;
 });
 
 
-// addBookToLibrary('moi',"foo", 45, 'read')
+addBookToLibrary('moi',"foo", 45, 'read')
 
+addBookToLibrary('moi',"foo", 45, 'read')
+addBookToLibrary('moi',"foo", 45, 'read')
+addBookToLibrary('moi',"foo", 45, 'read')
+addBookToLibrary('moi',"foo", 45, 'read')
+addBookToLibrary('moi',"foo", 45, 'read')
+addBookToLibrary('moi',"foo", 45, 'read')
+addBookToLibrary('moi',"foo", 45, 'read')
+addBookToLibrary('moi',"foo", 45, 'read')
+addBookToLibrary('moi',"foo", 45, 'read')
+addBookToLibrary('moi',"foo", 45, 'read')
+addBookToLibrary('moi',"foo", 45, 'read')
+addBookToLibrary('moi',"foo", 45, 'read')
+addBookToLibrary('moi',"foo", 45, 'read')
+addBookToLibrary('moi',"foo", 45, 'read')
+addBookToLibrary('moi',"foo", 45, 'read')
+addBookToLibrary('moi',"foo", 45, 'read')
+addBookToLibrary('moi',"foo", 45, 'read')
+addBookToLibrary('moi',"foo", 45, 'read')
+addBookToLibrary('moi',"foo", 45, 'read')
+addBookToLibrary('moi',"foo", 45, 'read')
+addBookToLibrary('moi',"foo", 45, 'read')
+addBookToLibrary('moi',"foo", 45, 'read')
+addBookToLibrary('moi',"foo", 45, 'read')
+addBookToLibrary('moi',"foo", 45, 'read')
+addBookToLibrary('moi',"foo", 45, 'read')
+addBookToLibrary('moi',"foo", 45, 'read')
+addBookToLibrary('moi',"foo", 45, 'read')
+addBookToLibrary('moi',"foo", 45, 'read')
+addBookToLibrary('moi',"foo", 45, 'read')
+addBookToLibrary('moi',"foo", 45, 'read')
+addBookToLibrary('moi',"foo", 45, 'read')
 // addBookToLibrary('moi',"foo", 45, 'read')
-// addBookToLibrary('moi',"foo", 45, 'read')
-// addBookToLibrary('moi',"foo", 45, 'read')
-// addBookToLibrary('moi',"foo", 45, 'read')
-// addBookToLibrary('moi',"foo", 45, 'read')
-// addBookToLibrary('moi',"foo", 45, 'read')
-// addBookToLibrary('moi',"foo", 45, 'read')
-// addBookToLibrary('moi',"foo", 45, 'read')
-// addBookToLibrary('moi',"foo", 45, 'read')
-// addBookToLibrary('moi',"foo", 45, 'read')
-// addBookToLibrary('moi',"foo", 45, 'read')
-// addBookToLibrary('moi',"foo", 45, 'read')
-// addBookToLibrary('moi',"foo", 45, 'read')
-// addBookToLibrary('moi',"foo", 45, 'read')
-// addBookToLibrary('moi',"foo", 45, 'read')
-// addBookToLibrary('moi',"foo", 45, 'read')
-// addBookToLibrary('moi',"foo", 45, 'read')
-// addBookToLibrary('moi',"foo", 45, 'read')
-// addBookToLibrary('moi',"foo", 45, 'read')
-// addBookToLibrary('moi',"foo", 45, 'read')
-// addBookToLibrary('moi',"foo", 45, 'read')
-// addBookToLibrary('moi',"foo", 45, 'read')
-// addBookToLibrary('moi',"foo", 45, 'read')
-// addBookToLibrary('moi',"foo", 45, 'read')
-// addBookToLibrary('moi',"foo", 45, 'read')
-// addBookToLibrary('moi',"foo", 45, 'read')
-// addBookToLibrary('moi',"foo", 45, 'read')
-// addBookToLibrary('moi',"foo", 45, 'read')
-// addBookToLibrary('moi',"foo", 45, 'read')
-// addBookToLibrary('moi',"foo", 45, 'read')
-// addBookToLibrary('moi',"foo", 45, 'read')
-// addBookToLibrary('moi',"foo", 45, 'read')
-// addToDisplay()
+addToDisplay()
 
 
 

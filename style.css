@@ -168,6 +168,7 @@ nav button {
     overflow-x: auto;
     overflow-y: hidden;
     -webkit-overflow-scrolling: touch;
+    scroll-behavior: smooth;
     /* overflow-y: scroll; */
 /* 
     border: solid 1px black; */
@@ -209,3 +210,26 @@ nav button {
     margin: 10px;
     float: right;
 }
+
+ /* Designing for scroll-bar */
+ ::-webkit-scrollbar {
+    width: 15px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: rgb(0, 0, 0, 0.3);
+    border-radius: 5px;
+
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #F2DBAE;
+    border-radius: 15px;
+}
+
+/* Handle on hover */
+/* ::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.1);
+} */
