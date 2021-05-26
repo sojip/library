@@ -29,10 +29,10 @@ function addToDisplay() {
     books.forEach((book) => { book.remove()})
     //add library content
     myLibrary.forEach(function(book) {
+        let container = document.querySelector("#booksContainer");
         let div = document.createElement('div');
         div.setAttribute("data-index", myLibrary.indexOf(book));
-        let container = document.querySelector("#booksContainer");
-        
+     
         div.innerHTML = `<h2  class="bookTitle">${book.title}</h2>
                         <h3>${book.author}</h3>
                         <h3>${book.numPages} Pages</h3>
@@ -92,6 +92,13 @@ window.addEventListener("scroll", () => {
     if(this.scrollY > 1) nav.classList.add("scroll");
     else nav.classList.remove("scroll");
 })
+
+
+window.addEventListener('wheel', function(e) {
+
+  if (e.deltaY > 0) booksContainer.scrollLeft += 50;
+  else booksContainer.scrollLeft -= 50;
+});
 
 
 // addBookToLibrary('moi',"foo", 45, 'read')
