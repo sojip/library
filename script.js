@@ -12,11 +12,6 @@ function Book(title, author, numPages, readState) {
     this.readState = readState;
 }
 
-Book.prototype.toggleRead = function() {
-    this.readState === "read" ? this.readState = "Not read" : this.readState = "read";
-    return this.readState
-}
-
 function addBookToLibrary(title, author, numPages, readState) {
     let book = new Book(title, author, numPages, readState);
     myLibrary.unshift(book);
@@ -36,7 +31,8 @@ function addToDisplay() {
         div.innerHTML = `<h2  class="bookTitle">${book.title}</h2>
                         <h3>${book.author}</h3>
                         <h3>${book.numPages} Pages</h3>
-                        <button class="readButton">${book.readState}</button><br>
+                        <h3>${book.readState}</h3>
+                        <button class="modifyButton">Modify</button><br>
                        <button class="delete">Delete</button>`
         div.classList.add("books");
         container.appendChild(div);
@@ -48,30 +44,36 @@ function addToDisplay() {
 }
 
 window.addEventListener("click", (e) => {
-    if(e.target.classList.value === "readButton") {
+    if(e.target.classList.value === "modifyButton") {
+        //modify created Books
         let arrIndex = Number(e.target.parentNode.dataset.index);
-        e.target.textContent = myLibrary[arrIndex].toggleRead();
+        let book = myLibrary[arrIndex];
+        modal.classList.add("opened");
+        let title = document.querySelector("#title");
+        let author = document.querySelector("#author");
+        let numPages = document.querySelector("#numPages");
+        let readState = document.querySelector("#readState");
+        let index = document.querySelector("#index");
+        title.value = book.title;
+        author.value = book.author;
+        numPages.value = book.numPages;
+        index.value =  arrIndex;
+        book.readState === "Read" ? readState.checked = true : readState.checked = false;
     }
     
     else if(e.target.classList.value === "delete") {
         let arrIndex = Number(e.target.parentNode.dataset.index);
         delete myLibrary[arrIndex]; 
         requestAnimationFrame( () => {
-            // e.target.parentNode.classList.remove("created");
-            // addToDisplay()
             e.target.parentNode.classList.add("removed");   
         });
         e.target.parentNode.addEventListener("animationend", () => {
-            console.log(e.animationName)
             e.target.parentNode.remove()
         });
-        
-        // e.target.parentNode.addEventListener("transitionend", (e) => {
-        //     if(e.propertyName === "opacity") {
-        //         // delete myLibrary[arrIndex];  
-        //         addToDisplay()
-        //     }    
-        // })
+    }
+
+    else if(e.target == modal) {
+        modal.classList.remove("opened");
     }
 })
 
@@ -89,62 +91,26 @@ formBook.addEventListener("submit", (e) => {
     let title = document.querySelector("#title").value;
     let author = document.querySelector("#author").value;
     let numPages = document.querySelector("#numPages").value;
+    let index = document.querySelector("#index").value;
     let readState
     document.querySelector("#readState").checked === true ? readState = "Read" : readState = "Not read";
     formBook.reset();
     modal.classList.remove("opened");
-    addBookToLibrary(title, author, numPages, readState);
+
+    if(index) {
+        myLibrary[index].title = title;
+        myLibrary[index].author = author;
+        myLibrary[index].numPages = numPages;
+        myLibrary[index].readState = readState;
+        document.querySelector("#index").value = "";
+    }
+    else {
+        addBookToLibrary(title, author, numPages, readState);
+    }   
     addToDisplay();  
 })
-
-window.addEventListener("scroll", () => {
-    if(this.scrollY > 1) nav.classList.add("scroll");
-    else nav.classList.remove("scroll");
-})
-
 
 window.addEventListener('wheel', function(e) {
   if (e.deltaY > 0) booksContainer.scrollLeft += 150;
   else booksContainer.scrollLeft -= 150;
 });
-
-
-addBookToLibrary('moi',"foo", 45, 'read')
-
-addBookToLibrary('moi',"foo", 45, 'read')
-addBookToLibrary('moi',"foo", 45, 'read')
-addBookToLibrary('moi',"foo", 45, 'read')
-addBookToLibrary('moi',"foo", 45, 'read')
-addBookToLibrary('moi',"foo", 45, 'read')
-addBookToLibrary('moi',"foo", 45, 'read')
-addBookToLibrary('moi',"foo", 45, 'read')
-addBookToLibrary('moi',"foo", 45, 'read')
-addBookToLibrary('moi',"foo", 45, 'read')
-addBookToLibrary('moi',"foo", 45, 'read')
-addBookToLibrary('moi',"foo", 45, 'read')
-addBookToLibrary('moi',"foo", 45, 'read')
-addBookToLibrary('moi',"foo", 45, 'read')
-addBookToLibrary('moi',"foo", 45, 'read')
-addBookToLibrary('moi',"foo", 45, 'read')
-// addBookToLibrary('moi',"foo", 45, 'read')
-// addBookToLibrary('moi',"foo", 45, 'read')
-// addBookToLibrary('moi',"foo", 45, 'read')
-// addBookToLibrary('moi',"foo", 45, 'read')
-// addBookToLibrary('moi',"foo", 45, 'read')
-// addBookToLibrary('moi',"foo", 45, 'read')
-// addBookToLibrary('moi',"foo", 45, 'read')
-// addBookToLibrary('moi',"foo", 45, 'read')
-// addBookToLibrary('moi',"foo", 45, 'read')
-// addBookToLibrary('moi',"foo", 45, 'read')
-// addBookToLibrary('moi',"foo", 45, 'read')
-// addBookToLibrary('moi',"foo", 45, 'read')
-// addBookToLibrary('moi',"foo", 45, 'read')
-// addBookToLibrary('moi',"foo", 45, 'read')
-// addBookToLibrary('moi',"foo", 45, 'read')
-// addBookToLibrary('moi',"foo", 45, 'read')
-// addBookToLibrary('moi',"foo", 45, 'read')
-addToDisplay()
-
-
-
-
