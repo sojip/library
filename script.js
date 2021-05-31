@@ -26,8 +26,7 @@ function addToDisplay() {
     myLibrary.forEach(function(book) {
         let container = document.querySelector("#booksContainer");
         let div = document.createElement('div');
-        div.setAttribute("data-index", myLibrary.indexOf(book));
-     
+        div.setAttribute("data-index", myLibrary.indexOf(book)); 
         div.innerHTML = `<h2  class="bookTitle">${book.title}</h2>
                         <h3>${book.author}</h3>
                         <h3>${book.numPages} Pages</h3>
@@ -73,6 +72,9 @@ window.addEventListener("click", (e) => {
     }
 
     else if(e.target == modal) {
+        let index = document.querySelector("#index").value;
+        if(index) document.querySelector("#index").value = ""; 
+        formBook.reset();
         modal.classList.remove("opened");
     }
 })
