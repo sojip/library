@@ -32,7 +32,7 @@ function addToDisplay() {
                         <h3>${book.author}</h3>
                         <h3>${book.numPages} Pages</h3>
                         <h3>${book.readState}</h3>
-                        <button class="modifyButton">Modify</button><br>
+                        <button class="modifyButton">Edit</button><br>
                        <button class="delete">Delete</button>`
         div.classList.add("books");
         container.appendChild(div);

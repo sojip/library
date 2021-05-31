@@ -8,14 +8,16 @@
 }
 
 html {
+    height: 100%;
+    width: 100%;
     scroll-behavior: smooth;
 }
 
 body {
-    min-height: 100%;
+    height: 100%;
     margin: 0;
     padding: 0;
-    width: 100vw;
+    width: 100%;
     overflow-x: hidden;
     background-image: url(img/10.jpg);
     background-repeat: no-repeat;
@@ -108,7 +110,7 @@ form label {
 
 
 .main {
-    height: 100vh;
+    height: 100%;
     width: 100%;
     display: flex;
     align-items: center;
@@ -162,7 +164,7 @@ nav button {
     overflow-y: hidden;
     -webkit-overflow-scrolling: touch;
     scroll-behavior: smooth;
-    /* background-color: red; */
+    gap: 10px;
 }
 
 #booksContainer::after {
@@ -183,7 +185,6 @@ nav button {
     background-color: var(--mainColor);
     color: white;
     transition: all 1s ease-in-out;
-    margin-right: 10px;
     /* Required for text-overflow to do anything */
     white-space: nowrap;
     overflow: hidden; 
