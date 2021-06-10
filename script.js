@@ -5,11 +5,14 @@ let closeModal = document.querySelector("#closeButton");
 let formBook = document.querySelector("#formBook");
 let nav = document.querySelector("nav");
 
-function Book(title, author, numPages, readState) {
-    this.title = title;
-    this.author = author;
-    this.numPages = numPages;
-    this.readState = readState;
+class Book {
+    constructor(title, author, numPages, readState) {
+        this.title = title;
+        this.author = author;
+        this.numPages = numPages;
+        this.readState = readState;
+    }
+
 }
 
 function addBookToLibrary(title, author, numPages, readState) {
