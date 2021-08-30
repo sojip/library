@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library</title>
+</head>
+<body>
+    <div class="modal">
+        <span id="closeButton">&times;</span>
+        <h2>Add a Book</h2>
+        <div id ="formContainer">
+            <form id="formBook" action="">
+                <input type="hidden" id="index" value="">
+                <label for="title">Title
+                    <input type="text" id="title" required>
+                </label>
+                <br>
+                <label for="author">author
+                    <input type="text" id="author" required>
+                </label>
+                <br>
+                <label for="numPages">Number of pages
+                    <input type="number" id="numPages" required>
+                </label>
+                <br>
+                <label for="readState">Read
+                    <input type="checkbox" id="readState">
+                <label for="readState">
+                <br>
+                <button id ="submitButton" type="submit">Submit</button>    
+            </form>
+        </div>   
+    </div>
+   
+    <div class="main">
+        <nav>
+            <div class="logo">
+                <img id="logo" alt="logo">
+                <a href="">My Library</a>
+            </div>       
+            <button  id="newBook">New Book</button>
+        </nav>
+        <div id="booksContainer">
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>
